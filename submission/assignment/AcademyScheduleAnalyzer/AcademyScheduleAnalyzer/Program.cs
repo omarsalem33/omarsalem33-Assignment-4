@@ -61,7 +61,7 @@ class Program
             Console.WriteLine($"Start Time: {dates[i].ToString("hh:mm tt")}");
             Console.WriteLine($"Duration: {durations[i]} minutes");
         }
-    }
+    }  
 
     public static void SearchSessionName(string name, string[] names, DateTime[] dates, int[] durations)
     {
