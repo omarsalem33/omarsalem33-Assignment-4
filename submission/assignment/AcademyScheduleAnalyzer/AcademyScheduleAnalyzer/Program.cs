@@ -41,8 +41,14 @@ class Program
         
         #region Part2
         
-        DisplaySchedule(sessionNames, sessionDates, sessionDurations);
+        // DisplaySchedule(sessionNames, sessionDates, sessionDurations);
         
+        #endregion
+
+        #region part 3
+
+        SearchSessionName("Functions" ,  sessionNames, sessionDates, sessionDurations);
+
         #endregion
     }
 
@@ -55,5 +61,19 @@ class Program
             Console.WriteLine($"Start Time: {dates[i].ToString("hh:mm tt")}");
             Console.WriteLine($"Duration: {durations[i]} minutes");
         }
+    }
+
+    public static void SearchSessionName(string name, string[] names, DateTime[] dates, int[] durations)
+    {
+        int index = Array.IndexOf(names, name);
+        if (index == -1)
+        {
+            Console.WriteLine("Session not found.");
+            return;
+        }
+        Console.WriteLine($"{index+1}. {names[index]}");
+        Console.WriteLine($"Date : {dates[index].ToString("dd MMMM yyyy")}");
+        Console.WriteLine($"Start Time: {dates[index].ToString("hh:mm tt")}");
+        Console.WriteLine($"Duration: {durations[index]} minutes");
     }
 }
