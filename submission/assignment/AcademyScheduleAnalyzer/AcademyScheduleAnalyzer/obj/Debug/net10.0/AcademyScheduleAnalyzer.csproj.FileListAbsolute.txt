@@ -1,0 +1,15 @@
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\bin\Debug\net10.0\AcademyScheduleAnalyzer.exe
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\bin\Debug\net10.0\AcademyScheduleAnalyzer.deps.json
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\bin\Debug\net10.0\AcademyScheduleAnalyzer.runtimeconfig.json
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\bin\Debug\net10.0\AcademyScheduleAnalyzer.dll
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\bin\Debug\net10.0\AcademyScheduleAnalyzer.pdb
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.AssemblyInfoInputs.cache
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.AssemblyInfo.cs
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.csproj.CoreCompileInputs.cache
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.sourcelink.json
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.dll
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\refint\AcademyScheduleAnalyzer.dll
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.pdb
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\AcademyScheduleAnalyzer.genruntimeconfig.cache
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\assignment\AcademyScheduleAnalyzer\AcademyScheduleAnalyzer\obj\Debug\net10.0\ref\AcademyScheduleAnalyzer.dll
