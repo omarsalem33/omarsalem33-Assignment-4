@@ -50,6 +50,57 @@ class Program
         SearchSessionName("Functions" ,  sessionNames, sessionDates, sessionDurations);
 
         #endregion
+        
+        #region part 4
+
+
+        Console.WriteLine("=================Sorting Session Names=======================");
+        SortSessionNames(sessionNames);
+        Console.WriteLine("=======================Reverse Session Names=======================");
+        ReverseSessionNames(sessionNames);
+        Console.WriteLine("=======================Find Session Index=======================");
+        Console.WriteLine("Enter Session Name");
+        string name = Console.ReadLine();
+        FindSessionIndexByName(sessionNames, name);
+        Console.WriteLine("=======================Check if a Session Exists=======================");
+        CheckSessionExists(sessionNames, name);
+        
+        Console.WriteLine("=======================Find a Session=======================");
+        Console.Write("Enter Session Name: ");
+        string sessionName = Console.ReadLine();
+        if (Array.Find(sessionNames, x => x.Equals(sessionName)) == null)
+            Console.WriteLine(sessionName +" not found.");
+        else
+            Console.WriteLine(sessionName +" is found.");
+        
+        Console.WriteLine("=======================Find a Session Index Using a Condition=======================");
+        Console.Write("Enter Session Name: ");
+        string sessionNameyIndex = Console.ReadLine();
+        if (Array.FindIndex(sessionNames, x => x.Equals(sessionNameyIndex)) == -1)
+            Console.WriteLine(-1);
+        else
+            Console.WriteLine(Array.FindIndex(sessionNames, x => x.Equals(sessionNameyIndex)));
+        
+        Console.WriteLine("=======================Copy an Array=======================");
+        string []sessionCopy = new string [sessionNames.Length];
+        Array.Copy(sessionNames, sessionCopy, sessionNames.Length);
+        sessionCopy[0] = "Binary Search";
+        Console.WriteLine("1- Original Session Name ");
+        foreach (var session in sessionNames)
+        {
+            Console.WriteLine(session);
+        }
+        
+        Console.WriteLine("2- Copy Session Name ");
+        foreach (var session in sessionCopy)
+        {
+            Console.WriteLine(sessionCopy);
+        }
+
+
+
+
+        #endregion
     }
 
     public static void DisplaySchedule(string [] names , DateTime [] dates, int [] durations)
@@ -76,4 +127,34 @@ class Program
         Console.WriteLine($"Start Time: {dates[index].ToString("hh:mm tt")}");
         Console.WriteLine($"Duration: {durations[index]} minutes");
     }
+    
+    
+    public static void SortSessionNames(string[] sessionNames)
+    {
+        string[] sessionNamesCopy = new string [sessionNames.Length];
+        Array.Copy(sessionNames, sessionNamesCopy, sessionNames.Length);
+        Array.Sort(sessionNamesCopy);
+        foreach (var name in sessionNamesCopy)
+            Console.WriteLine(name);   
+    }
+    
+    public static void ReverseSessionNames(string[] sessionNames)
+    {
+        string[] sessionNamesCopy = new string [sessionNames.Length];
+        Array.Copy(sessionNames, sessionNamesCopy, sessionNames.Length);
+        Array.Reverse(sessionNamesCopy);
+        foreach (var name in sessionNamesCopy)
+            Console.WriteLine(name);   
+    }
+
+    public static void FindSessionIndexByName(string[] sessionNames, string name)
+    {
+        Console.WriteLine($"Index :{Array.IndexOf(sessionNames, name)}");
+    }
+
+    public static void CheckSessionExists(string[] sessionNames, string name)
+    {
+        Console.WriteLine(Array.Exists(sessionNames, x => x.Equals(name))?"Session exists.":"Session does not exist.");
+    }
+    
 }
