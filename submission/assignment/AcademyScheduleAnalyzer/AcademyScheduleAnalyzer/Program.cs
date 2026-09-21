@@ -205,7 +205,11 @@ class Program
         #endregion 
         
         #region part 12
-            FindtheNextSession(sessionNames, sessionDates);
+            // FindtheNextSession(sessionNames, sessionDates);
+        #endregion
+        
+        #region part 13
+        DateFormating(sessionDates[0]);
         #endregion
     }
 
@@ -361,7 +365,6 @@ class Program
             total += duration;
         Console.WriteLine($"Total duration: {total}");
     }
-
     public static void FindtheNextSession(string[] sessionNames, DateTime[] dates)
     {
         Console.WriteLine("Next Session: ");
@@ -378,5 +381,14 @@ class Program
                 Console.WriteLine($"{diff.Hours} hours");
             }
         }
+    }
+
+    public static void DateFormating(DateTime date)
+    {
+        Console.WriteLine(date.ToString("yyyy-MM-dd"));
+        Console.WriteLine(date.ToString("dd/MM/yyyy"));
+        Console.WriteLine(date.ToString("dd MMMM yyyy"));
+        Console.WriteLine(date.ToString("dddd, dd MMMM yyyy"));
+        Console.WriteLine(date.ToString("h:mm tt "));
     }
 }
