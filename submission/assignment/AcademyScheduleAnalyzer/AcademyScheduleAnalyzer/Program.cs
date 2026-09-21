@@ -177,22 +177,31 @@ class Program
 
         #region Part 10
 
-        Console.Write($"First Session Name: ");
-        string firstSessionName = Console.ReadLine();
-        Console.Write($"Second Session Name: ");
-        string secondSessionName = Console.ReadLine();
-        int indexFirstSession = Array.IndexOf(sessionNames, firstSessionName);
-        int indexSecondSession = Array.IndexOf(sessionNames, secondSessionName);
-        
-        TimeSpan diff =sessionDates[indexFirstSession] - sessionDates[indexSecondSession];
-        diff = diff.Duration();
-        Console.WriteLine($"First Session:  {firstSessionName}");
-        Console.WriteLine($"First Session:  {secondSessionName}");
-        Console.WriteLine("Difference ");
-        Console.WriteLine($"{(int) diff.TotalDays} days");
-        Console.WriteLine($"{(int) diff.TotalHours} hours ");
+        // Console.Write($"First Session Name: ");
+        // string firstSessionName = Console.ReadLine();
+        // Console.Write($"Second Session Name: ");
+        // string secondSessionName = Console.ReadLine();
+        // int indexFirstSession = Array.IndexOf(sessionNames, firstSessionName);
+        // int indexSecondSession = Array.IndexOf(sessionNames, secondSessionName);
+        //
+        // TimeSpan diff =sessionDates[indexFirstSession] - sessionDates[indexSecondSession];
+        // diff = diff.Duration();
+        // Console.WriteLine($"First Session:  {firstSessionName}");
+        // Console.WriteLine($"First Session:  {secondSessionName}");
+        // Console.WriteLine("Difference ");
+        // Console.WriteLine($"{(int) diff.TotalDays} days");
+        // Console.WriteLine($"{(int) diff.TotalHours} hours ");
         
         #endregion
+        #region part 11
+        for (int i = 0; i < sessionNames.Length; i++)
+        {
+            if (sessionDates[i] > DateTime.Now)
+                Console.WriteLine($"{sessionNames[i]} Upcoming");
+            else
+                Console.WriteLine($"{sessionNames[i]} Past");
+        }
+        #endregion 
     }
 
     public static void DisplaySchedule(string [] names , DateTime [] dates, int [] durations)
