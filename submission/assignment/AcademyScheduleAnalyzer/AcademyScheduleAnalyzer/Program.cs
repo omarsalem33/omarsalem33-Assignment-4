@@ -160,19 +160,38 @@ class Program
 
         #region Part 9
 
-        Console.Write("Enter a Session Name: ");
-        string sessionName = Console.ReadLine();
-        int index =  Array.IndexOf(sessionNames, sessionName);
-       
-        Console.WriteLine($"Date: {sessionDates[index]:dd MMMM yyyy}");
-        Console.WriteLine($"Day: {sessionDates[index].DayOfWeek}");
-        Console.WriteLine($"Year: {sessionDates[index].Year}");
-        Console.WriteLine($"Month: {sessionDates[index].Month}");
-        Console.WriteLine($"Day Number: {sessionDates[index].Day}");
-        Console.WriteLine($"Start Time: {sessionDates[index]:hh:mm tt}");
-        Console.WriteLine($"Duration: {sessionDurations[index]} minutes");
-        Console.WriteLine($"End Time: {sessionDates[index].AddMinutes(sessionDurations[index]):hh:mm tt}");
+        // Console.Write("Enter a Session Name: ");
+        // string sessionName = Console.ReadLine();
+        // int index =  Array.IndexOf(sessionNames, sessionName);
+        //
+        // Console.WriteLine($"Date: {sessionDates[index]:dd MMMM yyyy}");
+        // Console.WriteLine($"Day: {sessionDates[index].DayOfWeek}");
+        // Console.WriteLine($"Year: {sessionDates[index].Year}");
+        // Console.WriteLine($"Month: {sessionDates[index].Month}");
+        // Console.WriteLine($"Day Number: {sessionDates[index].Day}");
+        // Console.WriteLine($"Start Time: {sessionDates[index]:hh:mm tt}");
+        // Console.WriteLine($"Duration: {sessionDurations[index]} minutes");
+        // Console.WriteLine($"End Time: {sessionDates[index].AddMinutes(sessionDurations[index]):hh:mm tt}");
 
+        #endregion
+
+        #region Part 10
+
+        Console.Write($"First Session Name: ");
+        string firstSessionName = Console.ReadLine();
+        Console.Write($"Second Session Name: ");
+        string secondSessionName = Console.ReadLine();
+        int indexFirstSession = Array.IndexOf(sessionNames, firstSessionName);
+        int indexSecondSession = Array.IndexOf(sessionNames, secondSessionName);
+        
+        TimeSpan diff =sessionDates[indexFirstSession] - sessionDates[indexSecondSession];
+        diff = diff.Duration();
+        Console.WriteLine($"First Session:  {firstSessionName}");
+        Console.WriteLine($"First Session:  {secondSessionName}");
+        Console.WriteLine("Difference ");
+        Console.WriteLine($"{(int) diff.TotalDays} days");
+        Console.WriteLine($"{(int) diff.TotalHours} hours ");
+        
         #endregion
     }
 
