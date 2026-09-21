@@ -130,15 +130,26 @@ class Program
         #region part 7
 
         int x = 5;
-        Increment(ref x);
-        Console.WriteLine($"X in ref keyword: {x}");
-        int res;
-        Decrement(x, out res);
-        Console.WriteLine($"X in out keyword: {res}");
+        // Increment(ref x);
+        // Console.WriteLine($"X in ref keyword: {x}");
+        // int res;
+        // Decrement(x, out res);
+        // Console.WriteLine($"X in out keyword: {res}");
+        //
+        // Console.Write("Enter session: ");
+        // string name = Console.ReadLine();
+        // GetIndexAndDuration(sessionNames, sessionDurations, name, out int i , out int d);
+        
+        int[] originalArray = { 10, 20, 30, 40, 50 };
 
-        Console.Write("Enter session: ");
-        string name = Console.ReadLine();
-        GetIndexAndDuration(sessionNames, sessionDurations, name, out int i , out int d);
+        Console.WriteLine("--- Before Function Call ---");
+        DisplayArray(originalArray);
+
+        ModifyArrayElement(originalArray, index: 2, newValue: 555);
+
+        Console.WriteLine("\n--- After Function Call ---");
+        DisplayArray(originalArray);
+        
         #endregion
     }
 
@@ -276,5 +287,15 @@ class Program
         Console.WriteLine($"Duration:  {d} minutes");
         
     }
-    
+    public static void ModifyArrayElement(int[] array, int index, int newValue)
+    {
+        if (array != null && index >= 0 && index < array.Length)
+        {
+            array[index] = newValue; 
+        }
+    }
+    public static void DisplayArray(int[] array)
+    {
+        Console.WriteLine(string.Join(", ", array));
+    }
 }
