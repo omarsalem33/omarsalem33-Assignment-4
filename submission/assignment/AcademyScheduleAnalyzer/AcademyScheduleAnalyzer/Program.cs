@@ -193,15 +193,20 @@ class Program
         // Console.WriteLine($"{(int) diff.TotalHours} hours ");
         
         #endregion
+        
         #region part 11
-        for (int i = 0; i < sessionNames.Length; i++)
-        {
-            if (sessionDates[i] > DateTime.Now)
-                Console.WriteLine($"{sessionNames[i]} Upcoming");
-            else
-                Console.WriteLine($"{sessionNames[i]} Past");
-        }
+        // for (int i = 0; i < sessionNames.Length; i++)
+        // {
+        //     if (sessionDates[i] > DateTime.Now)
+        //         Console.WriteLine($"{sessionNames[i]} Upcoming");
+        //     else
+        //         Console.WriteLine($"{sessionNames[i]} Past");
+        // }
         #endregion 
+        
+        #region part 12
+            FindtheNextSession(sessionNames, sessionDates);
+        #endregion
     }
 
     public static void DisplaySchedule(string [] names , DateTime [] dates, int [] durations)
@@ -355,5 +360,23 @@ class Program
         foreach (var duration in durations)
             total += duration;
         Console.WriteLine($"Total duration: {total}");
+    }
+
+    public static void FindtheNextSession(string[] sessionNames, DateTime[] dates)
+    {
+        Console.WriteLine("Next Session: ");
+        for (int i = 0; i < sessionNames.Length; i++)
+        {
+            if (dates[i] >= DateTime.Now)
+            {
+                Console.WriteLine(sessionNames[i]);
+                Console.WriteLine(dates[i].ToString("yyyy-MM-dd"));
+                Console.WriteLine(dates[i].ToString("hh:mm t"));
+                Console.WriteLine("TIme Remaining: ");
+                TimeSpan diff = dates[i] - DateTime.Now;
+                Console.WriteLine($"{diff.Days} days");
+                Console.WriteLine($"{diff.Hours} hours");
+            }
+        }
     }
 }
