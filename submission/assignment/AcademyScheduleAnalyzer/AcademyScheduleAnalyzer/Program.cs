@@ -23,7 +23,7 @@ class Program
             new DateTime(2026, 9, 24, 18, 0, 0)
         };
         
-        int[] sessionDurations = { 180, 240, 180, 240, 180 };
+        int[] sessionDurations = {180, 240, 180, 240, 180 };
 
         // for (int i = 0; i < sessionNames.Length; i++)
         // {
@@ -153,9 +153,26 @@ class Program
         #endregion
         
         #region part 8
-        CalculateTotalDurationUsingParams(120, 180);
-        CalculateTotalDurationUsingParams(120, 180, 240);
-        CalculateTotalDurationUsingParams(60, 90, 120, 180, 240);
+        // CalculateTotalDurationUsingParams(120, 180);
+        // CalculateTotalDurationUsingParams(120, 180, 240);
+        // CalculateTotalDurationUsingParams(60, 90, 120, 180, 240);
+        #endregion
+
+        #region Part 9
+
+        Console.Write("Enter a Session Name: ");
+        string sessionName = Console.ReadLine();
+        int index =  Array.IndexOf(sessionNames, sessionName);
+       
+        Console.WriteLine($"Date: {sessionDates[index]:dd MMMM yyyy}");
+        Console.WriteLine($"Day: {sessionDates[index].DayOfWeek}");
+        Console.WriteLine($"Year: {sessionDates[index].Year}");
+        Console.WriteLine($"Month: {sessionDates[index].Month}");
+        Console.WriteLine($"Day Number: {sessionDates[index].Day}");
+        Console.WriteLine($"Start Time: {sessionDates[index]:hh:mm tt}");
+        Console.WriteLine($"Duration: {sessionDurations[index]} minutes");
+        Console.WriteLine($"End Time: {sessionDates[index].AddMinutes(sessionDurations[index]):hh:mm tt}");
+
         #endregion
     }
 
@@ -304,7 +321,6 @@ class Program
     {
         Console.WriteLine(string.Join(", ", array));
     }
-
     public static void CalculateTotalDurationUsingParams(params int[] durations)
     {
         int total = 0;
