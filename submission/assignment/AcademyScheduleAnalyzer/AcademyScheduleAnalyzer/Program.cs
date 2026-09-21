@@ -129,7 +129,7 @@ class Program
         
         #region part 7
 
-        int x = 5;
+        // int x = 5;
         // Increment(ref x);
         // Console.WriteLine($"X in ref keyword: {x}");
         // int res;
@@ -140,16 +140,22 @@ class Program
         // string name = Console.ReadLine();
         // GetIndexAndDuration(sessionNames, sessionDurations, name, out int i , out int d);
         
-        int[] originalArray = { 10, 20, 30, 40, 50 };
-
-        Console.WriteLine("--- Before Function Call ---");
-        DisplayArray(originalArray);
-
-        ModifyArrayElement(originalArray, index: 2, newValue: 555);
-
-        Console.WriteLine("\n--- After Function Call ---");
-        DisplayArray(originalArray);
+        // int[] originalArray = { 10, 20, 30, 40, 50 };
+        //
+        // Console.WriteLine("--- Before Function Call ---");
+        // DisplayArray(originalArray);
+        //
+        // ModifyArrayElement(originalArray, index: 2, newValue: 555);
+        //
+        // Console.WriteLine("\n--- After Function Call ---");
+        // DisplayArray(originalArray);
         
+        #endregion
+        
+        #region part 8
+        CalculateTotalDurationUsingParams(120, 180);
+        CalculateTotalDurationUsingParams(120, 180, 240);
+        CalculateTotalDurationUsingParams(60, 90, 120, 180, 240);
         #endregion
     }
 
@@ -297,5 +303,13 @@ class Program
     public static void DisplayArray(int[] array)
     {
         Console.WriteLine(string.Join(", ", array));
+    }
+
+    public static void CalculateTotalDurationUsingParams(params int[] durations)
+    {
+        int total = 0;
+        foreach (var duration in durations)
+            total += duration;
+        Console.WriteLine($"Total duration: {total}");
     }
 }
