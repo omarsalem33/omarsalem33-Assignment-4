@@ -1,4 +1,6 @@
-﻿namespace AcademyScheduleAnalyzer;
+﻿using System.Text;
+
+namespace AcademyScheduleAnalyzer;
 
 class Program
 {
@@ -92,20 +94,37 @@ class Program
 
         #region Part 5
 
-        Console.WriteLine("==============================Part 5 ==================================");
+        // Console.WriteLine("==============================Part 5 ==================================");
+        //
+        // Console.WriteLine($"Total Duration: {CalculateTotalDuration(sessionDurations)}");
+        // Console.WriteLine($"Average Duration: {CalculateAverageDuration(sessionDurations)}");
+        // Console.WriteLine($"Shortest Duration: {ShortestDuration(sessionDurations)}");
+        // Console.WriteLine($"Longest Duration: {LargestDuration(sessionDurations)}");
+        //
+        // int [] durationsCopy = new int[sessionDurations.Length];
+        // Array.Copy(sessionDurations,durationsCopy,sessionDurations.Length);
+        // Array.Sort(durationsCopy);
+        // Console.WriteLine("Duration Session after Sorting");
+        // foreach (var durationSession in durationsCopy)
+        //     Console.WriteLine(durationSession);    
+        //
 
-        Console.WriteLine($"Total Duration: {CalculateTotalDuration(sessionDurations)}");
-        Console.WriteLine($"Average Duration: {CalculateAverageDuration(sessionDurations)}");
-        Console.WriteLine($"Shortest Duration: {ShortestDuration(sessionDurations)}");
-        Console.WriteLine($"Longest Duration: {LargestDuration(sessionDurations)}");
+        #endregion
         
-        int [] durationsCopy = new int[sessionDurations.Length];
-        Array.Copy(sessionDurations,durationsCopy,sessionDurations.Length);
-        Array.Sort(durationsCopy);
-        Console.WriteLine("Duration Session after Sorting");
-        foreach (var durationSession in durationsCopy)
-            Console.WriteLine(durationSession);    
         
+        #region part 6
+
+        Console.Write("enter a date");
+        string date = Console.ReadLine();
+        ReadSessionDate(date);
+        
+        string stringReport = BuildReportUsingString(sessionNames, sessionDates, sessionDurations);
+        Console.WriteLine("=== Report Built Using String ===");
+        Console.WriteLine(stringReport);
+
+        string sbReport = BuildReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations);
+        Console.WriteLine("=== Report Built Using StringBuilder ===");
+        Console.WriteLine(sbReport);
 
         #endregion
     }
@@ -168,7 +187,6 @@ class Program
     }
     public static int CalculateAverageDuration(int[] durations)
         => CalculateTotalDuration(durations) /  durations.Length;
-
     public static int ShortestDuration(int[] durations)
     {
         int shortestDuration = durations[0];
@@ -179,7 +197,6 @@ class Program
         }
         return shortestDuration;
     }
-    
     public static int LargestDuration(int[] durations)
     {
         int largesDuration = durations[0];
@@ -189,6 +206,48 @@ class Program
                 largesDuration = durations[i];
         }
         return largesDuration;
+    }
+    public static DateTime ReadSessionDate(string date)
+    {
+        DateTime result;
+        while (!DateTime.TryParse(date, out  result))
+        {
+            Console.Write("Invalid date format. Please enter a valid date (e.g., 2026-09-10 18:00): ");
+            date = Console.ReadLine();
+        }
+
+        return result;
+    }
+
+    public static string BuildReportUsingString(string[] sessionNames, DateTime[] dates, int[] durations)
+    {
+        string report = "Session Name".PadRight(22) + "date".PadRight(20) + "Duration (min) \n";
+        report += "--------------------------------------------------------------------------- \n";
+        for (int i = 0; i < sessionNames.Length; i++)
+        {
+            report += sessionNames[i].PadRight(22)
+                + dates[i].ToString("yyyy-MM-dd HH:mm").PadRight(20)
+                + durations[i] + "\n";
+        }
+        return report;
+    }
+    
+    
+    public static string BuildReportUsingStringBuilder(string[] sessionNames, DateTime[] dates, int[] durations)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.AppendLine("Session Name".PadRight(22) + "Date".PadRight(20) + "Duration (mins)");
+        sb.AppendLine("------------------------------------------------------------------ \n");
+
+        for (int i = 0; i < sessionNames.Length; i++)
+        {
+            sb.Append(sessionNames[i].PadRight(22));
+            sb.Append(dates[i].ToString("yyyy-MM-dd HH:mm").PadRight(20));
+            sb.AppendLine(durations[i].ToString());
+        }
+
+        return sb.ToString();
     }
         
     
