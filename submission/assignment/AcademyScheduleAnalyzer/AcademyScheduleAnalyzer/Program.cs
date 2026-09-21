@@ -136,6 +136,9 @@ class Program
         Decrement(x, out res);
         Console.WriteLine($"X in out keyword: {res}");
 
+        Console.Write("Enter session: ");
+        string name = Console.ReadLine();
+        GetIndexAndDuration(sessionNames, sessionDurations, name, out int i , out int d);
         #endregion
     }
 
@@ -263,6 +266,15 @@ class Program
     public static void Decrement(int number, out int res)
     {
         res = --number;
+    }
+    public static void GetIndexAndDuration(string[] sessionNames,int []durations, string name,out int i, out int d)
+    {
+      
+        i = sessionNames.IndexOf(name);
+        d = durations[i];
+        Console.WriteLine($"Index: {i}");
+        Console.WriteLine($"Duration:  {d} minutes");
+        
     }
     
 }
