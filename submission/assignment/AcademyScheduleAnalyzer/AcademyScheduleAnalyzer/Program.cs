@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 
 namespace AcademyScheduleAnalyzer;
 
@@ -209,7 +210,20 @@ class Program
         #endregion
         
         #region part 13
-        DateFormating(sessionDates[0]);
+        // DateFormating(sessionDates[0]);
+        #endregion
+        
+        #region part 14
+
+        Console.Write("Enter date: ");
+        string dateInput = Console.ReadLine();
+        string[] format = { "dd-MM-yyyy", "dd/MM/yyyy", "yyyy/MM/dd", "yyyy-MM-dd" };
+        if (DateTime.TryParseExact(dateInput, format, CultureInfo.InvariantCulture, DateTimeStyles.None,
+                out DateTime parsedDate))
+            Console.WriteLine($"date is valid {parsedDate}");
+        else
+            Console.WriteLine("date is not valid");
+
         #endregion
     }
 
@@ -382,7 +396,6 @@ class Program
             }
         }
     }
-
     public static void DateFormating(DateTime date)
     {
         Console.WriteLine(date.ToString("yyyy-MM-dd"));
