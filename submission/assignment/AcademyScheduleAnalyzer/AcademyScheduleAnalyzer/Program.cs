@@ -21,13 +21,7 @@ class Program
             new DateTime(2026, 9, 24, 18, 0, 0)
         };
         
-        int[] sessionDurations = {
-            180,
-            240,
-            180,
-            240,
-            180
-        };
+        int[] sessionDurations = { 180, 240, 180, 240, 180 };
 
         // for (int i = 0; i < sessionNames.Length; i++)
         // {
@@ -47,58 +41,71 @@ class Program
 
         #region part 3
 
-        SearchSessionName("Functions" ,  sessionNames, sessionDates, sessionDurations);
+        // SearchSessionName("Functions" ,  sessionNames, sessionDates, sessionDurations);
 
         #endregion
         
         #region part 4
+        // Console.WriteLine("=================Sorting Session Names=======================");
+        // SortSessionNames(sessionNames);
+        // Console.WriteLine("=======================Reverse Session Names=======================");
+        // ReverseSessionNames(sessionNames);
+        // Console.WriteLine("=======================Find Session Index=======================");
+        // Console.WriteLine("Enter Session Name");
+        // string name = Console.ReadLine();
+        // FindSessionIndexByName(sessionNames, name);
+        // Console.WriteLine("=======================Check if a Session Exists=======================");
+        // CheckSessionExists(sessionNames, name);
+        //
+        // Console.WriteLine("=======================Find a Session=======================");
+        // Console.Write("Enter Session Name: ");
+        // string sessionName = Console.ReadLine();
+        // if (Array.Find(sessionNames, x => x.Equals(sessionName)) == null)
+        //     Console.WriteLine(sessionName +" not found.");
+        // else
+        //     Console.WriteLine(sessionName +" is found.");
+        //
+        // Console.WriteLine("=======================Find a Session Index Using a Condition=======================");
+        // Console.Write("Enter Session Name: ");
+        // string sessionNameyIndex = Console.ReadLine();
+        // if (Array.FindIndex(sessionNames, x => x.Equals(sessionNameyIndex)) == -1)
+        //     Console.WriteLine(-1);
+        // else
+        //     Console.WriteLine(Array.FindIndex(sessionNames, x => x.Equals(sessionNameyIndex)));
+        //
+        // Console.WriteLine("=======================Copy an Array=======================");
+        // string []sessionCopy = new string [sessionNames.Length];
+        // Array.Copy(sessionNames, sessionCopy, sessionNames.Length);
+        // sessionCopy[0] = "Binary Search";
+        // Console.WriteLine("1- Original Session Name ");
+        // foreach (var session in sessionNames)
+        // {
+        //     Console.WriteLine(session);
+        // }
+        //
+        // Console.WriteLine("2- Copy Session Name ");
+        // foreach (var session in sessionCopy)
+        // {
+        //     Console.WriteLine(session);
+        // }
+        #endregion
 
+        #region Part 5
 
-        Console.WriteLine("=================Sorting Session Names=======================");
-        SortSessionNames(sessionNames);
-        Console.WriteLine("=======================Reverse Session Names=======================");
-        ReverseSessionNames(sessionNames);
-        Console.WriteLine("=======================Find Session Index=======================");
-        Console.WriteLine("Enter Session Name");
-        string name = Console.ReadLine();
-        FindSessionIndexByName(sessionNames, name);
-        Console.WriteLine("=======================Check if a Session Exists=======================");
-        CheckSessionExists(sessionNames, name);
+        Console.WriteLine("==============================Part 5 ==================================");
+
+        Console.WriteLine($"Total Duration: {CalculateTotalDuration(sessionDurations)}");
+        Console.WriteLine($"Average Duration: {CalculateAverageDuration(sessionDurations)}");
+        Console.WriteLine($"Shortest Duration: {ShortestDuration(sessionDurations)}");
+        Console.WriteLine($"Longest Duration: {LargestDuration(sessionDurations)}");
         
-        Console.WriteLine("=======================Find a Session=======================");
-        Console.Write("Enter Session Name: ");
-        string sessionName = Console.ReadLine();
-        if (Array.Find(sessionNames, x => x.Equals(sessionName)) == null)
-            Console.WriteLine(sessionName +" not found.");
-        else
-            Console.WriteLine(sessionName +" is found.");
+        int [] durationsCopy = new int[sessionDurations.Length];
+        Array.Copy(sessionDurations,durationsCopy,sessionDurations.Length);
+        Array.Sort(durationsCopy);
+        Console.WriteLine("Duration Session after Sorting");
+        foreach (var durationSession in durationsCopy)
+            Console.WriteLine(durationSession);    
         
-        Console.WriteLine("=======================Find a Session Index Using a Condition=======================");
-        Console.Write("Enter Session Name: ");
-        string sessionNameyIndex = Console.ReadLine();
-        if (Array.FindIndex(sessionNames, x => x.Equals(sessionNameyIndex)) == -1)
-            Console.WriteLine(-1);
-        else
-            Console.WriteLine(Array.FindIndex(sessionNames, x => x.Equals(sessionNameyIndex)));
-        
-        Console.WriteLine("=======================Copy an Array=======================");
-        string []sessionCopy = new string [sessionNames.Length];
-        Array.Copy(sessionNames, sessionCopy, sessionNames.Length);
-        sessionCopy[0] = "Binary Search";
-        Console.WriteLine("1- Original Session Name ");
-        foreach (var session in sessionNames)
-        {
-            Console.WriteLine(session);
-        }
-        
-        Console.WriteLine("2- Copy Session Name ");
-        foreach (var session in sessionCopy)
-        {
-            Console.WriteLine(sessionCopy);
-        }
-
-
-
 
         #endregion
     }
@@ -113,7 +120,6 @@ class Program
             Console.WriteLine($"Duration: {durations[i]} minutes");
         }
     }  
-
     public static void SearchSessionName(string name, string[] names, DateTime[] dates, int[] durations)
     {
         int index = Array.IndexOf(names, name);
@@ -127,8 +133,6 @@ class Program
         Console.WriteLine($"Start Time: {dates[index].ToString("hh:mm tt")}");
         Console.WriteLine($"Duration: {durations[index]} minutes");
     }
-    
-    
     public static void SortSessionNames(string[] sessionNames)
     {
         string[] sessionNamesCopy = new string [sessionNames.Length];
@@ -137,7 +141,6 @@ class Program
         foreach (var name in sessionNamesCopy)
             Console.WriteLine(name);   
     }
-    
     public static void ReverseSessionNames(string[] sessionNames)
     {
         string[] sessionNamesCopy = new string [sessionNames.Length];
@@ -146,15 +149,47 @@ class Program
         foreach (var name in sessionNamesCopy)
             Console.WriteLine(name);   
     }
-
     public static void FindSessionIndexByName(string[] sessionNames, string name)
     {
         Console.WriteLine($"Index :{Array.IndexOf(sessionNames, name)}");
     }
-
     public static void CheckSessionExists(string[] sessionNames, string name)
     {
         Console.WriteLine(Array.Exists(sessionNames, x => x.Equals(name))?"Session exists.":"Session does not exist.");
     }
+    public static int CalculateTotalDuration(int [] durations)
+    {
+        int totalDuration = 0;
+        foreach (var sessionDuration in durations)
+        {
+            totalDuration += sessionDuration;
+        }
+        return totalDuration;
+    }
+    public static int CalculateAverageDuration(int[] durations)
+        => CalculateTotalDuration(durations) /  durations.Length;
+
+    public static int ShortestDuration(int[] durations)
+    {
+        int shortestDuration = durations[0];
+        for (int i = 0; i < durations.Length; i++)
+        {
+            if(durations[i] > shortestDuration)
+                shortestDuration = durations[i];
+        }
+        return shortestDuration;
+    }
+    
+    public static int LargestDuration(int[] durations)
+    {
+        int largesDuration = durations[0];
+        for (int i = 0; i < durations.Length; i++)
+        {
+            if(durations[i] < largesDuration)
+                largesDuration = durations[i];
+        }
+        return largesDuration;
+    }
+        
     
 }
