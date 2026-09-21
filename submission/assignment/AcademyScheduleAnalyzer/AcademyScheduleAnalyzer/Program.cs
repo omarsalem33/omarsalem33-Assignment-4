@@ -111,20 +111,30 @@ class Program
 
         #endregion
         
-        
         #region part 6
 
-        Console.Write("enter a date");
-        string date = Console.ReadLine();
-        ReadSessionDate(date);
-        
-        string stringReport = BuildReportUsingString(sessionNames, sessionDates, sessionDurations);
-        Console.WriteLine("=== Report Built Using String ===");
-        Console.WriteLine(stringReport);
+        // Console.Write("enter a date");
+        // string date = Console.ReadLine();
+        // ReadSessionDate(date);
+        //
+        // string stringReport = BuildReportUsingString(sessionNames, sessionDates, sessionDurations);
+        // Console.WriteLine("=== Report Built Using String ===");
+        // Console.WriteLine(stringReport);
+        //
+        // string sbReport = BuildReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations);
+        // Console.WriteLine("=== Report Built Using StringBuilder ===");
+        // Console.WriteLine(sbReport);
 
-        string sbReport = BuildReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations);
-        Console.WriteLine("=== Report Built Using StringBuilder ===");
-        Console.WriteLine(sbReport);
+        #endregion
+        
+        #region part 7
+
+        int x = 5;
+        Increment(ref x);
+        Console.WriteLine($"X in ref keyword: {x}");
+        int res;
+        Decrement(x, out res);
+        Console.WriteLine($"X in out keyword: {res}");
 
         #endregion
     }
@@ -218,7 +228,6 @@ class Program
 
         return result;
     }
-
     public static string BuildReportUsingString(string[] sessionNames, DateTime[] dates, int[] durations)
     {
         string report = "Session Name".PadRight(22) + "date".PadRight(20) + "Duration (min) \n";
@@ -231,8 +240,6 @@ class Program
         }
         return report;
     }
-    
-    
     public static string BuildReportUsingStringBuilder(string[] sessionNames, DateTime[] dates, int[] durations)
     {
         StringBuilder sb = new StringBuilder();
@@ -249,6 +256,13 @@ class Program
 
         return sb.ToString();
     }
-        
+    public static void Increment(ref int number)
+    {
+        number++;
+    }
+    public static void Decrement(int number, out int res)
+    {
+        res = --number;
+    }
     
 }
