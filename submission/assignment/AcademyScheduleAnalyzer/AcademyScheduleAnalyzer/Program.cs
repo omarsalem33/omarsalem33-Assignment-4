@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
+using BenchmarkDotNet.Running;
 
 namespace AcademyScheduleAnalyzer;
 
@@ -253,7 +254,13 @@ class Program
         #endregion
         
         #region Part20
-        Console.WriteLine(GeneratesScheduleReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations));
+        // Console.WriteLine(GeneratesScheduleReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations));
+        #endregion
+
+        #region Part 21
+
+         BenchmarkRunner.Run<StringBenchmarks>();
+
         #endregion
     }
 
@@ -498,7 +505,6 @@ class Program
         
         return result;
     }
-    
     public static StringBuilder GeneratesScheduleReportUsingStringBuilder(string [] names, DateTime[] dates, int[] durations)
     {
         StringBuilder result = new StringBuilder();
@@ -508,4 +514,5 @@ class Program
         
         return result;
     }
+    
 }
