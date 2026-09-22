@@ -238,6 +238,12 @@ class Program
 
         #region Part17
 
+        // ValidatesASessionDuration();
+
+        #endregion
+
+        #region Part18
+
         ValidatesASessionDuration();
 
         #endregion
@@ -458,6 +464,9 @@ class Program
     {
         Console.Write("Enter Duration: ");
         int duration = int.Parse(Console.ReadLine());
+        
+        if (duration > 0)
+            Console.WriteLine("Duration accepted");
 
         try
         {
@@ -468,9 +477,9 @@ class Program
         {
             Console.WriteLine("Duration must be greater than zero");
         }
-
-        if (duration > 0)
-            Console.WriteLine("Duration accepted");
-            
+        finally
+        {
+            Console.WriteLine("Input operation finished");
+        }
     }
 }
