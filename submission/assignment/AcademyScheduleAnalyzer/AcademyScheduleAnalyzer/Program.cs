@@ -259,7 +259,13 @@ class Program
 
         #region Part 21
 
-         BenchmarkRunner.Run<StringBenchmarks>();
+        // BenchmarkRunner.Run<StringBenchmarks>();
+
+        #endregion
+
+        #region Part 22
+
+        BenchmarkRunner.Run<StringBenchmarks>();
 
         #endregion
     }

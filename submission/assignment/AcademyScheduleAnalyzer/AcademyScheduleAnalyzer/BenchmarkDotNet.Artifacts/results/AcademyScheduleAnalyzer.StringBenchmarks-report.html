@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>AcademyScheduleAnalyzer.StringBenchmarks-20260922-184413</title>
+<title>AcademyScheduleAnalyzer.StringBenchmarks-20260922-192453</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,10 +22,16 @@ Intel Core i7-8565U CPU 1.80GHz (Max: 1.99GHz) (Whiskey Lake), 1 CPU, 8 logical 
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method              </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Allocated</th>
+<thead><tr><th>Method              </th><th>Iterations</th><th>Mean      </th><th>Error   </th><th>StdDev    </th><th>Median    </th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>StringConcatenation</td><td>207.287 &mu;s</td><td>9.0235 &mu;s</td><td>25.7445 &mu;s</td><td>195.880 &mu;s</td><td>678.9551</td><td>2773.88 KB</td>
-</tr><tr><td>StringBuilderConcatenation</td><td>6.752 &mu;s</td><td>0.1141 &mu;s</td><td>0.2058 &mu;s</td><td>6.762 &mu;s</td><td>3.5095</td><td>14.37 KB</td>
+</thead><tbody><tr><td>StringConcatenation</td><td>10</td><td>114.86 ns</td><td>2.360 ns</td><td>6.175 ns</td><td>114.26 ns</td><td>0.0802</td><td>-</td><td>336 B</td>
+</tr><tr><td>StringBuilderConcatenation</td><td>10</td><td>65.08 ns</td><td>1.285 ns</td><td>2.625 ns</td><td>64.56 ns</td><td>0.0362</td><td>-</td><td>152 B</td>
+</tr><tr><td>StringConcatenation</td><td>100</td><td>2,567.30 ns</td><td>134.649 ns</td><td>377.569 ns</td><td>2,382.39 ns</td><td>4.9858</td><td>-</td><td>20856 B</td>
+</tr><tr><td>StringBuilderConcatenation</td><td>100</td><td>822.88 ns</td><td>29.346 ns</td><td>86.067 ns</td><td>793.25 ns</td><td>0.3052</td><td>-</td><td>1280 B</td>
+</tr><tr><td>StringConcatenation</td><td>1000</td><td>187,100.80 ns</td><td>2,720.668 ns</td><td>2,793.925 ns</td><td>186,480.42 ns</td><td>678.9551</td><td>-</td><td>2840456 B</td>
+</tr><tr><td>StringBuilderConcatenation</td><td>1000</td><td>7,615.10 ns</td><td>134.637 ns</td><td>144.061 ns</td><td>7,563.33 ns</td><td>3.5095</td><td>-</td><td>14712 B</td>
+</tr><tr><td>StringConcatenation</td><td>10000</td><td>26,653,006.90 ns</td><td>503,372.661 ns</td><td>1,050,726.273 ns</td><td>26,397,515.62 ns</td><td>90062.5000</td><td>62.5000</td><td>379436456 B</td>
+</tr><tr><td>StringBuilderConcatenation</td><td>10000</td><td>56,545.38 ns</td><td>1,128.162 ns</td><td>1,653.645 ns</td><td>56,460.51 ns</td><td>37.7197</td><td>4.6997</td><td>159424 B</td>
 </tr></tbody></table>
 </body>
 </html>

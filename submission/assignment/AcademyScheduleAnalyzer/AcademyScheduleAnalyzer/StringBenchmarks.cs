@@ -8,7 +8,8 @@ namespace AcademyScheduleAnalyzer;
 
 public class StringBenchmarks
 {
-    private const int Iterations = 1_000;
+    [Params(10, 100, 1000, 10000)]
+    public int Iterations { get; set; }
 
     [Benchmark]
     public string StringConcatenation()
