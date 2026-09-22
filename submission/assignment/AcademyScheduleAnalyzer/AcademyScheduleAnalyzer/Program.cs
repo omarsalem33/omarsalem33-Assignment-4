@@ -246,7 +246,7 @@ class Program
         // ValidatesASessionDuration();
         #endregion
 
-        #region Part 18
+        #region Part 19
 
         Console.WriteLine(GeneratesScheduleReport(sessionNames, sessionDates, sessionDurations));
 
