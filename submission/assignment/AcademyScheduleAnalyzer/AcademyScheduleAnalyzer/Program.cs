@@ -243,8 +243,12 @@ class Program
         #endregion
 
         #region Part18
+        // ValidatesASessionDuration();
+        #endregion
 
-        ValidatesASessionDuration();
+        #region Part 18
+
+        Console.WriteLine(GeneratesScheduleReport(sessionNames, sessionDates, sessionDurations));
 
         #endregion
     }
@@ -459,7 +463,6 @@ class Program
         }
         
     }
-
     public static void ValidatesASessionDuration()
     {
         Console.Write("Enter Duration: ");
@@ -481,5 +484,14 @@ class Program
         {
             Console.WriteLine("Input operation finished");
         }
+    }
+    public static string GeneratesScheduleReport(string [] names, DateTime[] dates, int[] durations)
+    {
+        string result = "";
+
+        for (int i = 0; i < names.Length; i++)
+            result += $"{names[i]} - {dates[i]} - {durations[i]} \n";
+        
+        return result;
     }
 }
