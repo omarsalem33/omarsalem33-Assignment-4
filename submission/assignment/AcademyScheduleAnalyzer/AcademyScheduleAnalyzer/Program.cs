@@ -215,15 +215,19 @@ class Program
         
         #region part 14
 
-        Console.Write("Enter date: ");
-        string dateInput = Console.ReadLine();
-        string[] format = { "dd-MM-yyyy", "dd/MM/yyyy", "yyyy/MM/dd", "yyyy-MM-dd" };
-        if (DateTime.TryParseExact(dateInput, format, CultureInfo.InvariantCulture, DateTimeStyles.None,
-                out DateTime parsedDate))
-            Console.WriteLine($"date is valid {parsedDate}");
-        else
-            Console.WriteLine("date is not valid");
+        // Console.Write("Enter date: ");
+        // string dateInput = Console.ReadLine();
+        // string[] format = { "dd-MM-yyyy", "dd/MM/yyyy", "yyyy/MM/dd", "yyyy-MM-dd" };
+        // if (DateTime.TryParseExact(dateInput, format, CultureInfo.InvariantCulture, DateTimeStyles.None,
+        //         out DateTime parsedDate))
+        //     Console.WriteLine($"date is valid {parsedDate}");
+        // else
+        //     Console.WriteLine("date is not valid");
 
+        #endregion
+
+        #region Part 15
+        GetValidInteger();
         #endregion
     }
 
@@ -403,5 +407,23 @@ class Program
         Console.WriteLine(date.ToString("dd MMMM yyyy"));
         Console.WriteLine(date.ToString("dddd, dd MMMM yyyy"));
         Console.WriteLine(date.ToString("h:mm tt "));
+    }
+
+    public static int GetValidInteger()
+    {
+        while (true)
+        {
+            Console.Write("Choose an Option:");
+            string input = Console.ReadLine();
+            try
+            {
+                int num = int.Parse(input);
+                return num;
+            }
+            catch (FormatException )
+            {
+                Console.WriteLine("Invalid menu option. Enter a number");
+            }
+        }
     }
 }
