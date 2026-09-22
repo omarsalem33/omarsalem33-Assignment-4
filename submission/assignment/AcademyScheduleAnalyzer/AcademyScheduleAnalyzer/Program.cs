@@ -232,7 +232,13 @@ class Program
 
         #region part16
 
-        GetSessionNameByUsingIndex(sessionNames);
+        // GetSessionNameByUsingIndex(sessionNames);
+
+        #endregion
+
+        #region Part17
+
+        ValidatesASessionDuration();
 
         #endregion
     }
@@ -414,7 +420,6 @@ class Program
         Console.WriteLine(date.ToString("dddd, dd MMMM yyyy"));
         Console.WriteLine(date.ToString("h:mm tt "));
     }
-
     public static int GetValidInteger()
     {
         while (true)
@@ -432,7 +437,6 @@ class Program
             }
         }
     }
-
     public static void GetSessionNameByUsingIndex(string []sessionNames)
     {
         Console.Write("Enter Session Index: ");
@@ -448,5 +452,25 @@ class Program
            
         }
         
+    }
+
+    public static void ValidatesASessionDuration()
+    {
+        Console.Write("Enter Duration: ");
+        int duration = int.Parse(Console.ReadLine());
+
+        try
+        {
+            if (duration < 1)
+                throw new ArgumentException();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Duration must be greater than zero");
+        }
+
+        if (duration > 0)
+            Console.WriteLine("Duration accepted");
+            
     }
 }
