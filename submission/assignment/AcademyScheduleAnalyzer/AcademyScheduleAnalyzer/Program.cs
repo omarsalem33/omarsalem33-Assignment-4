@@ -248,8 +248,12 @@ class Program
 
         #region Part 19
 
-        Console.WriteLine(GeneratesScheduleReport(sessionNames, sessionDates, sessionDurations));
+        // Console.WriteLine(GeneratesScheduleReport(sessionNames, sessionDates, sessionDurations));
 
+        #endregion
+        
+        #region Part20
+        Console.WriteLine(GeneratesScheduleReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations));
         #endregion
     }
 
@@ -491,6 +495,16 @@ class Program
 
         for (int i = 0; i < names.Length; i++)
             result += $"{names[i]} - {dates[i]} - {durations[i]} \n";
+        
+        return result;
+    }
+    
+    public static StringBuilder GeneratesScheduleReportUsingStringBuilder(string [] names, DateTime[] dates, int[] durations)
+    {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < names.Length; i++)
+            result.Append( $"{names[i]} - {dates[i]} - {durations[i]} \n");
         
         return result;
     }
