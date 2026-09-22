@@ -227,7 +227,13 @@ class Program
         #endregion
 
         #region Part 15
-        GetValidInteger();
+        // GetValidInteger();
+        #endregion
+
+        #region part16
+
+        GetSessionNameByUsingIndex(sessionNames);
+
         #endregion
     }
 
@@ -425,5 +431,22 @@ class Program
                 Console.WriteLine("Invalid menu option. Enter a number");
             }
         }
+    }
+
+    public static void GetSessionNameByUsingIndex(string []sessionNames)
+    {
+        Console.Write("Enter Session Index: ");
+        int index = int.Parse(Console.ReadLine());
+
+        try
+        {
+            Console.WriteLine($"Session: {sessionNames[index]} ");
+        }
+        catch (IndexOutOfRangeException )
+        {
+            Console.WriteLine("The selected session index is out of range.");
+           
+        }
+        
     }
 }
