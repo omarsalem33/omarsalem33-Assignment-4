@@ -1,6 +1,9 @@
 ﻿using System.Globalization;
 using System.Text;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Running;
+using MemoryBenchmarking;
 
 namespace AcademyScheduleAnalyzer;
 
@@ -254,7 +257,7 @@ class Program
         #endregion
         
         #region Part20
-        // Console.WriteLine(GeneratesScheduleReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations));
+         // Console.WriteLine(GeneratesScheduleReportUsingStringBuilder(sessionNames, sessionDates, sessionDurations));
         #endregion
 
         #region Part 21
@@ -265,9 +268,17 @@ class Program
 
         #region Part 22
 
-        BenchmarkRunner.Run<StringBenchmarks>();
+        // BenchmarkRunner.Run<StringBenchmarks>();
 
         #endregion
+
+        #region part 23
+        var config = ManualConfig.CreateMinimumViable()
+            .AddDiagnoser(MemoryDiagnoser.Default);
+
+        BenchmarkRunner.Run<AllocationBenchmark>();
+        BenchmarkRunner.Run<AllocationBenchmark>(config);
+        #endregion 
     }
 
     public static void DisplaySchedule(string [] names , DateTime [] dates, int [] durations)
