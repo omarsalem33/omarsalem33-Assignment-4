@@ -1,0 +1,15 @@
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\bin\Debug\net10.0\LeetCodeAssignment4.exe
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\bin\Debug\net10.0\LeetCodeAssignment4.deps.json
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\bin\Debug\net10.0\LeetCodeAssignment4.runtimeconfig.json
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\bin\Debug\net10.0\LeetCodeAssignment4.dll
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\bin\Debug\net10.0\LeetCodeAssignment4.pdb
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.AssemblyInfoInputs.cache
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.AssemblyInfo.cs
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.csproj.CoreCompileInputs.cache
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.sourcelink.json
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.dll
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\refint\LeetCodeAssignment4.dll
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.pdb
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\LeetCodeAssignment4.genruntimeconfig.cache
+D:\.NET Course\Assignments\C# Assingments\omarsalem33-Assignment-4\submission\Leetcode\LeetCodeAssignment4\LeetCodeAssignment4\obj\Debug\net10.0\ref\LeetCodeAssignment4.dll
